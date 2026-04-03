@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheus Pepe | Desenvolvedor Full Stack</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root { --cor-laranja: #ff4500; }
+        
+        * { font-family: 'Inter', system-ui, sans-serif; }
+
+        html { scroll-behavior: smooth; }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-on-scroll.delay-100 { transition-delay: 100ms; }
+        .animate-on-scroll.delay-200 { transition-delay: 200ms; }
+        .animate-on-scroll.delay-300 { transition-delay: 300ms; }
+
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.04);
+            box-shadow: 0 30px 60px -15px rgb(255 69 0 / 0.3);
+        }
+
+        .hero-orange {
+            background-color: var(--cor-laranja);
+            transition: transform 0.5s ease;
+        }
+        
+        .hero-orange:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .dark .hero-orange { box-shadow: 0 25px 50px -12px rgb(255 69 0 / 0.5); }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background-color: var(--cor-laranja);
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+
+    <!-- HEADER -->
+    <header class="max-w-7xl mx-auto px-8 py-8 flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800">
+        <h1 class="text-4xl font-bold tracking-tight">PORTFÓLIO</h1>
+        
+        <nav class="flex gap-8 text-sm font-medium">
+            <a href="#sobre" class="hover:text-orange-600 dark:hover:text-orange-500">Sobre mim</a>
+            <a href="#projetos" class="hover:text-orange-600 dark:hover:text-orange-500">Projetos</a>
+            <a href="#habilidades" class="hover:text-orange-600 dark:hover:text-orange-500">Habilidades</a>
+            <a href="#github" class="hover:text-orange-600 dark:hover:text-orange-500">GitHub</a>
+            <a href="#contato" class="hover:text-orange-600 dark:hover:text-orange-500">Contato</a>
+        </nav>
+        
+        <div class="flex items-center gap-6">
+            <a href="https://github.com/mello2601" target="_blank" class="hover:text-orange-600 dark:hover:text-orange-500">
+                <i class="fa-brands fa-github text-2xl"></i>
+            </a>
+            
+            <button id="theme-toggle" aria-label="Alternar tema"
+                    class="w-11 h-11 flex items-center justify-center rounded-2xl bg-zinc-200 dark:bg-zinc-800 hover:bg-orange-100 dark:hover:bg-zinc-700 transition-all">
+                <i id="sun-icon" class="fa-solid fa-sun text-xl text-amber-500"></i>
+                <i id="moon-icon" class="fa-solid fa-moon text-xl text-zinc-400 hidden"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="max-w-7xl mx-auto px-8 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="flex justify-center md:justify-start">
+            <div class="hero-orange w-80 h-80 rounded-3xl overflow-hidden shadow-2xl">
+                <img src="imagens/foto-portfolio.jpg" 
+                     alt="Matheus Pepe - Desenvolvedor Full Stack" 
+                     class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <div class="space-y-4 animate-on-scroll">
+            <p class="text-2xl font-medium text-zinc-600 dark:text-zinc-400">PRAZER, ME CHAMO</p>
+            <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter">MATHEUS PEPE</h1>
+            <h2 class="text-5xl md:text-6xl font-bold text-orange-600 leading-none">DESENVOLVEDOR<br>FULL STACK</h2>
+            
+            <p class="text-lg text-zinc-600 dark:text-zinc-400 max-w-md pt-4">
+                Estudante de Análise e Desenvolvimento de Sistemas na Universidade Estácio de Sá.
+            </p>
+        </div>
+    </section>
+
+    <!-- SOBRE MIM -->
+    <section id="sobre" class="max-w-7xl mx-auto px-8 py-20 border-t border-zinc-200 dark:border-zinc-800">
+        <div class="animate-on-scroll">
+            <h2 class="section-title text-4xl font-bold mb-8">Sobre Mim</h2>
+            <div class="max-w-3xl text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
+                <p class="mb-6">
+                    Tenho 19 anos e atualmente curso Análise e Desenvolvimento de Sistemas na Universidade Estácio de Sá. 
+                    Meu objetivo é me tornar um desenvolvedor Full Stack profissional, buscando futuramente atuar de forma autônoma.
+                </p>
+                <p>
+                    Apaixonado por tecnologia, estou constantemente aprendendo novas ferramentas e construindo projetos reais 
+                    para colocar em prática todo o conhecimento adquirido.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTÃO PRINCIPAL -->
+    <div class="max-w-7xl mx-auto px-8 pb-20 flex justify-center">
+        <a href="#projetos" 
+           class="inline-flex items-center justify-center px-12 py-6 text-lg font-semibold border-2 border-zinc-900 dark:border-white rounded-3xl hover:bg-orange-600 hover:text-white transition-all animate-on-scroll">
+            Conheça um pouco do meu trabalho!
+        </a>
+    </div>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="bg-white dark:bg-zinc-900 py-24">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="section-title text-4xl font-bold mb-12 animate-on-scroll">Meus Projetos</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-3xl overflow-hidden animate-on-scroll">
+                    <div class="h-56 bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-7xl">📱</div>
+                    <div class="p-8">
+                        <h3 class="font-semibold text-2xl mb-3">TaskFlow</h3>
+                        <p class="text-zinc-600 dark:text-zinc-400 mb-6">Gerenciador de tarefas completo com drag-and-drop, autenticação e notificações.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-4 py-1 text-xs bg-white dark:bg-zinc-900 border rounded-full">React</span>
+                            <span class="px-4 py-1 text-xs bg-white dark:bg-zinc-900 border rounded-full">Node.js</span>
+                            <span class="px-4 py-1 text-xs bg-white dark:bg-zinc-900 border rounded-full">MongoDB</span>
+                        </div>
+                        <a href="https://github.com/mello2601/TaskFlow" target="_blank" class="flex items-center gap-2 text-orange-600 dark:text-orange-500 hover:underline font-medium">
+                            <i class="fa-brands fa-github"></i> Ver no GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-3xl overflow-hidden animate-on-scroll delay-100">
+                    <div class="h-56 bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-7xl">🛒</div>
+                    <div class="p-8">
+                        <h3 class="font-semibold text-2xl mb-3">E-Shop Mini</h3>
+                        <p class="text-zinc-600 dark:text-zinc-400 mb-6">Loja virtual completa com carrinho, checkout e painel administrativo.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-4 py-1 text-xs bg-white dark:bg-zinc-900 border rounded-full">Next.js</span>
+                            <span class="px-4 py-1 text-xs bg-white dark:bg-zinc-900 border rounded-full">TypeScript</span>
+                            <span class="px-4 py-1 text-xs bg-white dark:bg-zinc-900 border rounded-full">Stripe</span>
+                        </div>
+                        <a href="https://github.com/mello2601/E-Shop-Mini" target="_blank" class="flex items-center gap-2 text-orange-600 dark:text-orange-500 hover:underline font-medium">
+                            <i class="fa-brands fa-github"></i> Ver no GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-3xl overflow-hidden animate-on-scroll delay-200">
+                    <div class="h-56 bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-7xl">📊</div>
+                    <div class="p-8">
+                        <h3 class="font-semibold text-2xl mb-3">Finance Tracker</h3>
+                        <p class="text-zinc-600 dark:text-zinc-400 mb-6">Dashboard financeiro com gráficos interativos e relatórios.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-4 py-1 text-xs bg-white dark:bg-zinc-900 border rounded-full">Vue.js</span>
+                            <span class="px-4 py-1 text-xs bg-white dark:bg-zinc-900 border rounded-full">Express</span>
+                            <span class="px-4 py-1 text-xs bg-white dark:bg-zinc-900 border rounded-full">PostgreSQL</span>
+                        </div>
+                        <a href="https://github.com/mello2601/Finance-Tracker" target="_blank" class="flex items-center gap-2 text-orange-600 dark:text-orange-500 hover:underline font-medium">
+                            <i class="fa-brands fa-github"></i> Ver no GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="py-24 bg-zinc-900 dark:bg-black text-white">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="section-title text-4xl font-bold mb-12 text-white animate-on-scroll">Áreas de Atuação</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-zinc-800 p-10 rounded-3xl text-center hover:bg-orange-600 transition-all animate-on-scroll">
+                    <i class="fa-solid fa-laptop-code text-5xl mb-6"></i>
+                    <h3 class="text-2xl font-semibold">Front-end</h3>
+                </div>
+                <div class="bg-zinc-800 p-10 rounded-3xl text-center hover:bg-orange-600 transition-all animate-on-scroll delay-100">
+                    <i class="fa-solid fa-server text-5xl mb-6"></i>
+                    <h3 class="text-2xl font-semibold">Back-end</h3>
+                </div>
+                <div class="bg-zinc-800 p-10 rounded-3xl text-center hover:bg-orange-600 transition-all animate-on-scroll delay-200">
+                    <i class="fa-solid fa-database text-5xl mb-6"></i>
+                    <h3 class="text-2xl font-semibold">Banco de Dados</h3>
+                </div>
+                <div class="bg-zinc-800 p-10 rounded-3xl text-center hover:bg-orange-600 transition-all animate-on-scroll delay-300">
+                    <i class="fa-solid fa-cloud text-5xl mb-6"></i>
+                    <h3 class="text-2xl font-semibold">DevOps & Cloud</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GITHUB -->
+    <section id="github" class="py-24 bg-white dark:bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-8 text-center">
+            <div class="animate-on-scroll">
+                <h2 class="text-5xl font-bold mb-6">Quer ver mais código?</h2>
+                <p class="text-xl text-zinc-600 dark:text-zinc-400 mb-10">Todo meu trabalho está aberto no GitHub</p>
+                <a href="https://github.com/mello2601" target="_blank"
+                   class="inline-flex items-center gap-4 bg-zinc-900 hover:bg-orange-600 dark:bg-white dark:text-zinc-900 text-white px-12 py-7 rounded-3xl text-2xl font-semibold transition-all">
+                    <i class="fa-brands fa-github text-4xl"></i>
+                    Acessar GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO - VERSÃO VERTICAL (como estava antes) -->
+    <section id="contato" class="py-24 bg-zinc-900 dark:bg-black text-white">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="animate-on-scroll">
+                <h2 class="text-4xl font-bold mb-6">Vamos conversar?</h2>
+                <p class="text-zinc-400 text-lg mb-12">
+                    Estou aberto para oportunidades, freelas, estágios ou apenas trocar ideia sobre tecnologia.
+                </p>
+            </div>
+            
+            <div class="max-w-md space-y-8">
+                <!-- E-mail -->
+                <a href="mailto:matheus.mello2601@gmail.com" 
+                   class="flex items-center gap-4 hover:text-orange-400 transition-colors group">
+                    <i class="fa-solid fa-envelope text-4xl w-12"></i>
+                    <div>
+                        <p class="font-medium text-lg">matheus.mello2601@gmail.com</p>
+                        <p class="text-sm text-zinc-400">Envie um e-mail</p>
+                    </div>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/matheus-pepe26/" target="_blank" 
+                   class="flex items-center gap-4 hover:text-orange-400 transition-colors group">
+                    <i class="fa-brands fa-linkedin text-4xl w-12"></i>
+                    <div>
+                        <p class="font-medium text-lg">linkedin.com/in/matheus-pepe26</p>
+                        <p class="text-sm text-zinc-400">Conecte-se no LinkedIn</p>
+                    </div>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/5521969302601" target="_blank" 
+                   class="flex items-center gap-4 hover:text-orange-400 transition-colors group">
+                    <i class="fa-brands fa-whatsapp text-4xl w-12"></i>
+                    <div>
+                        <p class="font-medium text-lg">(21) 96930-2601</p>
+                        <p class="text-sm text-zinc-400">Fale comigo no WhatsApp</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-zinc-900 dark:bg-black text-white/60 py-12 text-center text-sm">
+        <p>© 2026 Matheus Pepe • Feito com ❤️ e muito café em Rio de Janeiro</p>
+    </footer>
+
+    <script>
+        tailwind.config = { darkMode: 'class' };
+
+        // Dark Mode
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+
+        function updateIcons(isDark) {
+            sunIcon.classList.toggle('hidden', isDark);
+            moonIcon.classList.toggle('hidden', !isDark);
+        }
+
+        function toggleDarkMode() {
+            const isDark = !document.documentElement.classList.contains('dark');
+            document.documentElement.classList.toggle('dark', isDark);
+            localStorage.theme = isDark ? 'dark' : 'light';
+            updateIcons(isDark);
+        }
+
+        function initTheme() {
+            const saved = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const shouldBeDark = saved === 'dark' || (!saved && prefersDark);
+            document.documentElement.classList.toggle('dark', shouldBeDark);
+            updateIcons(shouldBeDark);
+        }
+
+        // Scroll Animations
+        function handleScroll() {
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                if (el.getBoundingClientRect().top <= window.innerHeight * 0.85) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        // Inicialização
+        window.addEventListener('load', () => {
+            initTheme();
+            handleScroll();
+            window.addEventListener('scroll', handleScroll);
+        });
+
+        themeToggle.addEventListener('click', toggleDarkMode);
+    </script>
+</body>
+</html>
